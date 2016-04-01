@@ -1,0 +1,37 @@
+### cuando la magnitud de las fluctuaciones estacionales de la serie crece y decrece
+# proporcionalmente con los crecimientos y ecrecimientos de la tendencia
+###una vez que logramos descomponer la st en diversos los elementos de estacionalidad
+#y tendencia hay que desestacionalizar la st y eliminar la tendencia ##
+#### EXISTE TENDENCIA CUANDO existe un patron en los datos a largo plazo ya se
+####que aumenta o disminuye los datos
+####la estacionalidad existe cuando
+######la ST cuando es influenciado por factores estacionales (por ejemplo, ña 
+#####trimestre del año, el mes, o el dia de la semana)
+#####existen componente de ciclico en los datos cuando
+#### se detectan incrementos y caidas que no son de tiempo determinado
+####(duracion por lo general de al menos 2 años)
+#####3 de estos elementos normalmente existen confusiones para detectarlos entre
+####la estacionalidad y el componente ciclico
+####principales diferencias entre estos dos  componentes
+# 1 (patron estacional longitud constante; patron ciclico longitud variable
+##2 ( duracion media del componente ciclico mas largo que la longitud del patron estacional))
+##3 magnitud de ciclico mas variable que magnitud del patron estacional
+###4 el momento de picos y caidas es predecible con los datos estacionales
+## pero impredecible a largo plazo con datos ciclicos
+
+install.packages("fpp")
+require (fpp)
+help (fpp)
+plot(window(elec,start=1980), ylab = "GWh", xlab="year", main="Australian electricity production")
+##estacionalidad, tendencia y no ciclico
+plot(bricksq, ylab="million units", xlab="year", main="Australian clay brick production")
+###esta y ciclo no mucho tendencia
+plot(hsales, main="Sales of new one-family houses, USA", ylab="Total sales", xlab = "Year")
+###no esta ni tendencia, posible ciclo
+############## 3 ejemplos graficas detectar tendencia, estacionalidad y ciclo
+ica <- read.csv ("/home/sgr/Escritorio/table.csv", header=T)
+icats <- ts(ica[,5], start=2000, frequency=12)
+plot(icats, , main="valor acciones televisa", ylab="valor cierre")
+bimbo <- read.csv ("/home/sgr/Desktop/bimbo.csv", header= T)
+bimbots <- ts(ica [,5], start= 2000, frecuency=12)
+plot(icats, main= "valor acciones bimbo", ylab="valor cierre")
