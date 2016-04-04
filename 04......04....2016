@@ -1,0 +1,25 @@
+######################EJERCICIO
+cemx <- read.csv ("F:\\Octavo semestre\\Series de Tiempo\\cemx.csv", header = T)
+cemxts <- ts(cemx[,5], start = 2000, frequency = 12)
+femsa <- read.csv ("F:\\Octavo semestre\\Series de Tiempo\\femsa.csv", header = T)
+femsats <- ts(femsa[,5], start = 2000, frequency = 12)
+  
+bimbo <- read.csv ("F:\\Octavo semestre\\Series de Tiempo\\bimbomx.csv", header = T)
+bimbots <- ts(bimbo[,5], start = 2000, frequency = 12)
+  
+#############1)
+seasonplot(cemxts,s= 12, year.labels=TRUE,
+main="V acciones cemex",
+ylab="V cierre",col=rainbow(20),year.labels.left=TRUE,pch=19)
+  
+seasonplot(femsats,s= 12, year.labels=TRUE,
+main="V acciones FEMSA",
+ylab="V cierre",col=rainbow(20),year.labels.left=TRUE,pch=19)
+
+seasonplot(bimbots,s= 12, year.labels=TRUE,main="V acciones BIMBO",ylab="V cierre",col=rainbow(20),year.labels.left=TRUE,pch=19)
+##############2) 
+x <- cemxts
+y <- femsats
+z <- bimbots
+cor(x,y)
+cor(y,z)cor(x,z)
